@@ -7,11 +7,16 @@
     <title>Hello world</title>
 </head>
 <body>
+    {% if tasks %}
     <h1>Tasks</h1>
     <p><a href="add/">Добавить новую задачу</a></p>
     {% for task in tasks %}
         <p>Описание - {{task.description}}, Deadline - {{task.date_deadline}}</p>
         <p><a href="edit/?id={{task.id}}">редактировать</a> | <a href="del/?id={{task.id}}">удалить</a></p>
     {% endfor %}
+    {% else %}
+    <h1>Вы не создали еще ни одной задачи!</h1>
+    <p><a href="add/">Добавить новую задачу</a></p>
+    {% endif %}
 </body>
 </html>

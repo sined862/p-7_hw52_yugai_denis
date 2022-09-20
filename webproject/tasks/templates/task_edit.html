@@ -22,11 +22,7 @@
                 {% for choice in choices %}
                 <label for="contactChoice1">{{choice.1}}</label>
                 
-                <input type="radio" id="status" name="status" value="{{ choice.0}}" 
-                {% if task.status == choice.0 %}
-                checked
-                {% endif %}
-                >        
+                <input type="radio" id="status" name="status" value="{{ choice.0}}" {% if task.status == choice.0 %} checked {% endif %}>        
                 {% endfor %}
             </div>
             <div class="form_row">
