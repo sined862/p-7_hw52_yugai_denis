@@ -18,4 +18,9 @@ def add_view(request):
     Task.objects.create(**task_data)
     return redirect('/')
 
-
+def del_view(request):
+    if request.method == 'GET':
+        id_task = request.GET.get('id')
+        task = Task.objects.get(pk=id_task)
+        task.delete()
+        return redirect('/')
